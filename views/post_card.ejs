@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+    <img src="<%= `/images/${dado.image}` %>" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= dado.title %>
+      </h5>
+      <p class="card-text">
+        <%= dado.description %>
+      </p>
+      <a href="/posts/<%=dado.id %>" class="btn btn-primary">Ler mais</a>
+    </div>
+  </div>
