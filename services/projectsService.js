@@ -3,7 +3,7 @@ var getProjects = function() {
       {
         id: 1,
         title: 'Projeto 1',
-        image: 'post4.jpg',
+        image: 'post4.jgp',
         description: 'Projeto 1',
         body: 'Meu primeiro projeto bla bla'
       },
