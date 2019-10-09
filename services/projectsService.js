@@ -1,29 +1,29 @@
-var getProjects = function() {
-    var project = [
-      {
-        id: 1,
-        title: 'Projeto 1',
-        image: 'post4.jgp',
-        description: 'Projeto 1',
-        body: 'Meu primeiro projeto bla bla'
-      },
-      {
-        id: 2,
-        title: 'Projeto 2',
-        image: 'post5.jpg',
-        description: 'Meu segundo post',
-        body: 'Meu segundo projeto bla bla'
-      },
-      {
-        id: 3,
-        title: 'Projeto 3',
-        image: 'post6.jpg',
-        description: 'Meu terceiro post',
-        body: 'Meu terceiro projeto bla bla'
-      },
-      
-    ]
-  
+var fs = require('fs');
+
+var projectsFilePath = 'db/projects.json';
+
+var loadFileProjects = function(){
+  var fileData = fs.readFileSync(projectsFilePath, 'utf8');
+  var projects = JSON.parse(fileData);
+
+  return projects;
+}
+
+var saveFileProject = function(projects) { 
+  var data = JSON.stringify(projects);
+  fs.writeFileSync(projectsFilePath, data, 'utf8');
+};
+
+var getProjects = function(){
+  var projects = loadFileProjects();
+  return projects;
+}
+
+var saveProjetc = function(newProject) {
+  var projects = loadFileProjects();
+  projects.push(newProject);
+  saveFileProject(projects);
+}
     return project;
   }
   
