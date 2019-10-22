@@ -16,9 +16,10 @@ router.get('/' , function(req, res, next){
 router.get('/create', function(req, res, next){
 
     res.render('admin/projects/create');
+
 });
 
-router.project('/create',  function(req, res, next){
+router.post('/create',  function(req, res, next){
     var projects = projectsService.getProjects();
 
     var newId = projects.length + 1;

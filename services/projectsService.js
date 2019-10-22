@@ -24,8 +24,7 @@ var saveProjetc = function(newProject) {
   projects.push(newProject);
   saveFileProject(projects);
 }
-    return project;
-  }
+    
   
   module.exports = {
     getProjects: getProjects
