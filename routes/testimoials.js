@@ -1,15 +1,17 @@
+  
 var express = require('express');
 var router = express.Router();
-var tesmimoialsService = require('../services/testimoialsService');
+var testimonialsService = require('../services/testimonialsService');
 
-router.get('/', function(req, res, next){
-    var testimoials = tesmimoialsService.getTestimoials();
+router.get('/', function(req, res, next) {
+  var testimonials = testimonialsService.getTestimonials();
 
+  var viewData = {
+    title: 'Depoimentos',
+    testimonials: testimonials
+  };
 
-    var viewData = {
-        title : 'Depoimentos',
-        testimoials : testimoials
-    };
-
-    res.render('testimonials' , viewData);
+  res.render('testimonials', viewData);
 });
+
+module.exports = router;

@@ -5,8 +5,7 @@ var projectsFilePath = 'db/projects.json';
 var loadFileProjects = function(){
   var fileData = fs.readFileSync(projectsFilePath, 'utf8');
   var projects = JSON.parse(fileData);
-
-  return projects;
+ return projects;
 }
 
 var saveFileProject = function(projects) { 
@@ -27,5 +26,6 @@ var saveProjetc = function(newProject) {
     
   
   module.exports = {
-    getProjects: getProjects
+    getProjects: getProjects,
+    saveProject: saveProjetc
   }

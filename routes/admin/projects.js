@@ -29,7 +29,7 @@ router.post('/create',  function(req, res, next){
     newProject.title = req.body.title;
     newProject.image = req.body.image;
     newProject.description = req.body.description;
-    newProject.body = req.body.projectBoddy;
+    newProject.body = req.body.projectbody;
 
     projectsService.saveProject(newProject);
 
